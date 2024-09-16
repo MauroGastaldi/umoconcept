@@ -1,29 +1,33 @@
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <header>
-            <nav className="py-3 navbar navbar-expand-lg bg-body-tertiary">
+
+            <nav className="navbar navbar-expand-lg bg-body-tertiary ">
                 <div className="container-fluid">
-                    <a className="px-4 navbar-brand" href="umo">umo</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <Link to="/">
+                        <img className='logoUmo px-4 w-50' src={"./img/logo.png"} alt="logoUmo" />
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                    </Link>
+                    <div className="collapse navbar-collapse mx-5" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item ">
-                                <a className="nav-link" href="lamparas">lamparas</a>
+                                <NavLink className="link-dark" to="/categoria/lamparas">Lamparas</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="macetas">macetas</a>
+                            <li className="nav-item mx-5">
+                                <NavLink className="link-dark" to="/categoria/macetas">Macetas</NavLink>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <CartWidget/>
+                <CartWidget />
             </nav>
-            
+
         </header>
     )
 }
