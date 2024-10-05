@@ -1,27 +1,39 @@
 import { useState, useEffect } from "react";
-import { getProductos, getProductosPorCategorias } from "../asyncmock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import { db } from "../../services/config";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
-const ItemListContanier = () => {
+const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(false)
+
     const {idCategoria} = useParams()
 
-    useEffect (() => {
-        const funcionProductos = idCategoria ? getProductosPorCategorias : getProductos;
-        
+    useEffect(()=> {
+        setLoading(true)
+        const misProductos = idCategoria ? query(collection(db, "productos"), where("idCat", "==", idCategoria)) : (collection(db,"productos"))
 
-        funcionProductos(idCategoria)
-        .then(res => setProductos(res))
-
-    },[idCategoria])
-
+        getDocs(misProductos)
+        .then (res => {
+            
+            const nuevosProductos = res.docs.map(doc =>{
+                const data = doc.data()
+                return {id:doc.id , ...data}
+            })
+            setProductos(nuevosProductos)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+    }, [idCategoria])
 
     return (
-        <> 
-        <ItemList productos = {productos} />
+        <>
+            {loading ? <Loader/> : <ItemList productos={productos}/>}
         </>
     )
 }
 
-export default ItemListContanier 
+export default ItemListContainer

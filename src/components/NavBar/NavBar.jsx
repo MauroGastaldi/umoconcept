@@ -5,7 +5,6 @@ import { Link, NavLink } from 'react-router-dom'
 const NavBar = () => {
     return (
         <header>
-
             <nav className="navbar navbar-expand-lg bg-body-tertiary ">
                 <div className="container-fluid">
                     <Link to="/">
