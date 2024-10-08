@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useContador = (inicial, stock) => {
-  const [contador, setContador] = useState(inicial);
+  const [contador, setContador] = useState(Number(inicial));
 
   const sumarContador = () => {
     if (contador < stock) {

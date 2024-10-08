@@ -22,7 +22,7 @@ const App = () => {
             <Route path='/item/:idItem' element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
-            <Route path="*" element={ <h2> Sitio en construccion</h2> }/>
+            <Route path="*" element={ <h2 className='d-flex justify-content-center'> Sitio en construccion</h2> }/>
           </Routes>
         </CarritoProvider>
         <ToastContainer />
