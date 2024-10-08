@@ -20,12 +20,12 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
 
   }
   return (
-    <div className='contenedorItem row m-5 justify-content-center'>
-      <div className="col-6">
-        <img className="rounded-5" src={img} alt={nombre} />
+    <div className='contenedorItem row m-5  justify-content-center'>
+      <div className="col-12 col-lg-6 px-3">
+        <img className="rounded-5 w-100" src={img} alt={nombre} />
       </div>
-      <div className="col-4 d-flex flex-column align-items-center">
-        <h2>Nombre: {nombre} </h2>
+      <div className="col-12 col-lg-4 px-3 d-flex flex-column align-items-center my-3">
+        <h2 >Nombre: {nombre} </h2>
         <h4>Precio: ${precio} </h4>
         <h6>Stock:{stock}</h6>
         <p>Nuestros productos impresos en 3D están fabricados con PLA, un material biodegradable de origen vegetal que combina diseño moderno con un compromiso hacia el medioambiente. Creados para aportar estilo y calidez a tus espacios, cada pieza es única y pensada para integrarse de manera sostenible en tu hogar u oficina.</p>
