@@ -1,0 +1,13 @@
+.ItemListCss{
+    
+    /*background: linear-gradient(145deg, #364649, #708F96);*/
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    font-family: 'Arial', sans-serif;
+    }
+  
+    

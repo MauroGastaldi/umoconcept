@@ -5,26 +5,22 @@ import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
     const [telefono, setTelefono] = useState("");
-    const [email, setEmail] = useState("");
-    const [emailConfirmacion, setEmailConfirmacion] = useState("");
     const [error, setError] = useState("");
     const [ordenId, setOrdenId] = useState("");
     const [direccion, setDireccion] = useState("");
+    const [departamento, setDepartamento] = useState("");
+    const [ciudad, setCiudad] = useState("");
+    const [aprovincia, setaProvincia] = useState("");
+    const [codigoPostal, setCodigoPostal] = useState("");
 
     const { carrito, vaciarCarrito, total } = useContext(CarritoContext);
 
     const manejadorFormulario = (e) => {
         e.preventDefault();
 
-        if (!nombre || !apellido || !telefono || !email || !emailConfirmacion || !direccion) {
+        if (!nombre || !direccion || !departamento || !telefono || !ciudad || !aprovincia || !codigoPostal) {
             setError("Por favor, complete todos los campos");
-            return;
-        }
-
-        if (email !== emailConfirmacion) {
-            setError("Los campos del email no coinciden");
             return;
         }
 
@@ -34,13 +30,15 @@ const Checkout = () => {
                 nombre: producto.item.nombre,
                 cantidad: producto.cantidad,
             })),
-            total: total,
+            atotal: total,
             fecha: new Date(),
             nombre,
-            apellido,
-            telefono,
-            email,
             direccion,
+            departamento,
+            telefono,
+            ciudad,
+            aprovincia,
+            codigoPostal,
         };
 
         Promise.all(
@@ -60,11 +58,12 @@ const Checkout = () => {
                         setOrdenId(docRef.id);
                         vaciarCarrito();
                         setNombre("");
-                        setApellido("");
-                        setTelefono("");
-                        setEmail("");
-                        setEmailConfirmacion("");
                         setDireccion("");
+                        setDepartamento("");
+                        setTelefono("");
+                        setCiudad("");
+                        setaProvincia("");
+                        setCodigoPostal("");
                     })
                     .catch((error) => {
                         console.log("Error al crear la orden", error);
@@ -78,60 +77,24 @@ const Checkout = () => {
     };
 
     return (
-        <div>
-            <form className="w-100 mx-auto my-5 d-flex flex-wrap" onSubmit={manejadorFormulario}>
-                <div className="col-12 col-lg-6 px-3">
-                    <h4 className="text-center my-4">Por favor, complete los campos</h4>
-                    <div className="card p-4 shadow-sm rounded-4">
+        <div className="container mt-4">
+            <h5 className="text-center mb-4">Por favor, complete los campos</h5>
+            <form className="row g-4" onSubmit={manejadorFormulario}>
 
+                {/* Columna de formulario */}
+                <div className="col-12 col-lg-6">
+                    <div className="card p-4 shadow-sm rounded-4">
                         <div className="mb-3">
-                            <label htmlFor="inputName" className="form-label">Nombre</label>
+                            <label htmlFor="inputName" className="form-label">Nombre y Apellido</label>
                             <input
                                 type="text"
                                 className="form-control rounded"
                                 id="inputName"
                                 onChange={(e) => setNombre(e.target.value)}
                                 value={nombre}
-                                placeholder="Ingrese su nombre"
+                                placeholder="Ingrese su nombre y apellido"
                             />
                         </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="inputLastname" className="form-label">Apellido</label>
-                            <input
-                                type="text"
-                                className="form-control rounded"
-                                id="inputLastname"
-                                onChange={(e) => setApellido(e.target.value)}
-                                value={apellido}
-                                placeholder="Ingrese su apellido"
-                            />
-                        </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="inputEmail4" className="form-label">Email</label>
-                            <input
-                                type="email"
-                                className="form-control rounded"
-                                id="inputEmail4"
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
-                                placeholder="Ingrese su email"
-                            />
-                        </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="inputEmailConf" className="form-label">Confirmar email</label>
-                            <input
-                                type="email"
-                                className="form-control rounded"
-                                id="inputEmailConf"
-                                onChange={(e) => setEmailConfirmacion(e.target.value)}
-                                value={emailConfirmacion}
-                                placeholder="Confirme su email"
-                            />
-                        </div>
-
                         <div className="mb-3">
                             <label htmlFor="inputTel" className="form-label">Teléfono</label>
                             <input
@@ -144,44 +107,108 @@ const Checkout = () => {
                             />
                         </div>
 
-                        <div className="mb-3">
-                            <label htmlFor="inputDirec" className="form-label">Dirección</label>
-                            <input
-                                type="text"
-                                className="form-control rounded"
-                                id="inputDirec"
-                                onChange={(e) => setDireccion(e.target.value)}
-                                value={direccion}
-                                placeholder="Ingrese su dirección"
-                            />
+                        <div className="row">
+                            <div className="col-6">
+                                <label htmlFor="inputDirec" className="form-label">Dirección</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded"
+                                    id="inputDirec"
+                                    onChange={(e) => setDireccion(e.target.value)}
+                                    value={direccion}
+                                    placeholder="Calle - N°"
+                                />
+                            </div>
+                            <div className="col-6">
+                                <label htmlFor="inputDepartamento" className="form-label">Departamento</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded"
+                                    id="inputDepartamento"
+                                    onChange={(e) => setDepartamento(e.target.value)}
+                                    value={departamento}
+                                    placeholder="Ej: 1 - C"
+                                />
+                            </div>
                         </div>
 
+                        <div className="row mt-3">
+                            <div className="col-4">
+                                <label htmlFor="inputCiudad" className="form-label">Ciudad</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded"
+                                    id="inputCiudad"
+                                    onChange={(e) => setCiudad(e.target.value)}
+                                    value={ciudad}
+                                />
+                            </div>
+                            <div className="col-4">
+                                <label htmlFor="inputProvincia" className="form-label">Provincia</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded"
+                                    id="inputProvincia"
+                                    onChange={(e) => setaProvincia(e.target.value)}
+                                    value={aprovincia}
+                                />
+                            </div>
+                            <div className="col-4">
+                                <label htmlFor="inputCodigoPostal" className="form-label">Código Postal</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded"
+                                    id="inputCodigoPostal"
+                                    onChange={(e) => setCodigoPostal(e.target.value)}
+                                    value={codigoPostal}
+                                />
+                            </div>
+                        </div>
                     </div>
-                    {error && <p style={{ color: "red" }}> {error}</p>}
+
+                    {error && <p className="text-danger mt-2"> {error}</p>}
                 </div>
 
-                <div className="col-12 col-lg-6 px-3">
+                {/* Columna de resumen del carrito */}
+                <div className="col-12 col-lg-6">
                     <div className="card shadow-sm p-4 bg-white rounded-4">
                         {carrito.map((producto) => (
                             <div key={producto.item.id} className="card mb-3">
                                 <div className="card-body">
                                     <h5 className="card-title">{producto.item.nombre}</h5>
-                                    <p className="text-muted">{producto.item.precio} x {producto.cantidad}</p>
+                                    <p className="text-muted">
+                                        {producto.item.precio} x {producto.cantidad}
+                                    </p>
                                     <p className="fw-bold">Subtotal: ${producto.item.precio * producto.cantidad}</p>
                                 </div>
                             </div>
                         ))}
                         <div className="alert alert-success text-center">
                             <h4>Total a pagar: ${total}</h4>
+                            <p>(no incluye envíos)</p>
                         </div>
-                        <button type="submit" className="btn btn-outline-success rounded-pill my-3 w-100">Confirmar Compra</button>
+                        <button type="submit" className="btn btn-outline-dark rounded-pill my-3 w-100">
+                            Confirmar Compra
+                        </button>
                         {ordenId && (
                             <div className="alert alert-success text-center mt-4">
                                 <strong>¡Gracias por tu compra!</strong>
-                                <p>Tu número de orden es: </p>
+                                <p>Tu número de orden es:</p>
                                 <p>{ordenId}</p>
+                                <p>Por favor, envíanos tu número de pedido por WhatsApp (haz clic en el botón) para coordinar el pago y brindarte nuestro alias de cuenta.</p>
+
+                                {/* Botón de WhatsApp */}
+                                <a
+                                    href={`https://wa.me/3435024502?text=Hola, mi número de pedido es: ${ordenId}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-success mt-3"
+                                >
+                                    Enviar pedido por WhatsApp
+                                </a>
                             </div>
                         )}
+
                     </div>
                 </div>
             </form>

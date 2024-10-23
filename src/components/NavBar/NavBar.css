@@ -1,0 +1,63 @@
+/* Navbar container */
+.navbar-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  /* Navbar floating style */
+  .navbar-content {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    max-width: 1200px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Smooth transition on hover for links */
+  .nav-link {
+    font-size: 1.1rem;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Active link style
+  .nav-link.active {
+    color: white;
+    background-color: #00aaff;
+  }
+   */
+  /* Navbar on hover (optional) */
+  /* .navbar-content:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  } */
+  
+  /* Navbar toggler for mobile */
+  /* .navbar-toggler-icon {
+    background-image: url("/public/img/MenuHambg.png");
+  }
+   */
+  /* Logo style */
+  .logoUmo {
+    border-radius: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navbar-content {
+      max-width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  
+    .nav-link {
+      font-size: 1rem;
+    }
+  }
+  
