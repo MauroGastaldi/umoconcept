@@ -26,7 +26,7 @@ const Cart = () => {
 
     return (
         <div className="container my-4">
-            <div className="table ">
+           
                 <table className="table mx-auto">
                     <tbody>
                         <tr>
@@ -64,7 +64,7 @@ const Cart = () => {
                         </tr>
                     </tbody>
                 </table>
-            </div>
+             
         </div>
     );
 };

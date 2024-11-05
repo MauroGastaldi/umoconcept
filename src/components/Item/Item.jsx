@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CarritoContext } from '../../context/CarritoContext';
 
-const Item = ({ id, nombre, precio, img, stock, ancho, alto }) => {
+const Item = ({ id, nombre, precio, img, stock, ancho, alto, color: colorSeleccionado }) => {
     const { agregarAlCarrito } = useContext(CarritoContext);
 
     const sumarAlCarrito = () => {
         if (stock > 0) {
-            const item = { id, nombre, precio, img };
+            const item = { id, nombre, precio, img, color: colorSeleccionado };
             agregarAlCarrito(item, 1);
         }
     };

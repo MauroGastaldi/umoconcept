@@ -25,13 +25,13 @@ export const db = getFirestore(app)
 
 const misProductos = [
   {
-    stock: 10, nombre: "Volta - ", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/MyPeque3.jpg",
-    imagenesSecundarias: ["/img/MyPeque33.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "No incluye foco."
+    stock: 10, nombre: "Volta - ", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
+    imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "No incluye foco."
   },
 
   {
-    stock: 10, nombre: "Volta", precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/myLamp3.jpg",
-    imagenesSecundarias: ["/img/MyLamp1.jpg","/img/mylampB.jpg"], foco: "No incluye foco."
+    stock: 10, nombre: "Volta", precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/Mylampp.jpg",
+    imagenesSecundarias: ["/img/MyLamp1.jpg","/img/MyLampFocooo.jpg","/img/MyLampFocoAmarilla.jpg"], foco: "No incluye foco."
   },
   {
     stock: 10, nombre: "Umbra - negra", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/lamparaA.jpg",
@@ -52,8 +52,9 @@ const misProductos = [
   {
     stock: 10, nombre: "Halo negra- tamaño M", precio: 15000, alto: "13cm", ancho: "11.5cm", idCat: "macetas", img: "/img/MacetaVertical4.jpg",
     imagenesSecundarias: [" /img/MacetaVertical2.jpg", "/img/MacetaVertical5.jpg"],
-    // colores: ["Blanco", "Negro"] 
+     colores: ["Blanco", "Negro"] 
   },
+
   {
     stock: 10, nombre: "Halo blanca- tamaño M", precio: 15000, alto: "13cm", ancho: "15cm", idCat: "macetas", img: "/img/MacetaVertical.jpg",
     imagenesSecundarias: ["/img/MacetaVertical3.jpg", "/img/MacetaVertical7.jpg" ]

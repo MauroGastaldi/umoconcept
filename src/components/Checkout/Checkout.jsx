@@ -29,7 +29,7 @@ const Checkout = () => {
                 id: producto.item.id,
                 nombre: producto.item.nombre,
                 cantidad: producto.cantidad,
-                color: producto.color,
+                color: producto.item.color,
             })),
             atotal: total,
             fecha: new Date(),
@@ -57,7 +57,7 @@ const Checkout = () => {
                 addDoc(collection(db, "ordenes"), orden)
                     .then((docRef) => {
                         setOrdenId(docRef.id);
-                        vaciarCarrito();
+                        vaciarCarrito("");
                         setNombre("");
                         setDireccion("");
                         setDepartamento("");
@@ -79,7 +79,7 @@ const Checkout = () => {
 
     return (
         <div className="container mt-4">
-            <h5 className="text-center mb-4">Por favor, complete los campos</h5>
+            <h5 className="mx-5  mb-4">Por favor, complete los campos</h5>
             <form className="row g-4" onSubmit={manejadorFormulario}>
 
                 {/* Columna de formulario */}
@@ -184,10 +184,13 @@ const Checkout = () => {
                                 </div>
                             </div>
                         ))}
+                       
+                        
                         <div className="alert alert-success text-center">
                             <h4>Total a pagar: ${total}</h4>
                             <p>(no incluye envíos)</p>
                         </div>
+
                         <button type="submit" className="btn btn-outline-dark rounded-pill my-3 w-100">
                             Confirmar Compra
                         </button>
