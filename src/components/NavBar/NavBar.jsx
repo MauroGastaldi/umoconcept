@@ -11,7 +11,7 @@ const NavBar = () => {
                     
                     {/* Logo */}
                     <Link to="/" className="navbar-brand d-flex align-items-center">
-                        <img src={"./img/logo.png"} alt="logoUmo" className="logoUmo" style={{ width: '90px' }} />
+                        <img src={"/img/logo.png"} alt="logoUmo" className="logoUmo" style={{ width: '90px' }} />
                     </Link>
 
                     {/* Botón menú hamburguesa para mobile */}

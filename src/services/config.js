@@ -24,59 +24,85 @@ export const db = getFirestore(app)
 //AGREGAR EL TEMA DEL FOCO INCANDESCENTE EN LAMPARAS
 
 const misProductos = [
-  // {
-  //   stock: 10, nombre: "Volta - ", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "lamparas", img: "/public/img/MyPeque3.jpg",
-  //   imagenesSecundarias: ["/public/img/MyPeque33.jpg", "/public/img/MyPeque333.jpg"]
-  // },
-
-  // {
-  //   stock: 10, nombre: "Volta", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "lamparas", img: "/public/img/myLamp3.jpg",
-  //   imagenesSecundarias: ["/public/img/MyLamp1.jpg",]
-  // },
-  // {
-  //   stock: 10, nombre: "Umbra - negra", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "lamparas", img: "/public/img/lamparaA.jpg",
-  //   imagenesSecundarias: ["/public/img/lamparaAA1.jpg","/public/img/lamparaAA.jpg","/public/img/lamparaAAA.jpg"]
-  // },
-  // {
-  //   stock: 10, nombre: "Umbra - blanca", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "lamparas", img: "/public/img/Lampara3.jpg",
-  //   imagenesSecundarias: ["/public/img/Lampara2.jpg", "/public/img/lamparaAAA.jpg"]
-  // },
-  // {
-  //   stock: 10, nombre: "Umbra - mixta", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "lamparas", img: "/public/img/lamparaB.jpg",
-  //   imagenesSecundarias: [ ]
-  // },
-  // {
-  //   stock: 10, nombre: "Halo - tamaño m", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaVertical.jpg",
-  //   imagenesSecundarias: ["/public/img/MacetaVertical4.jpg", "/public/img/MacetaVertical5.jpg", "/public/img/MacetaVertical3.jpg"]
-  // },
-  // {
-  //   stock: 10, nombre: "Halo - Tamaño l", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaVertical6.jpg",
-  //   imagenesSecundarias: ["/public/img/MacetaVertical1.jpg", "/public/img/MacetaVertical2.jpg", "/public/img/MacetaVertical7.jpg"]
-  // },
-  // {
-  //   stock: 10, nombre: "Ébano - Tamaño m", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaCruzada.jpg",
-  //   imagenesSecundarias: ["/public/img/MacetaCruzada1.jpg","/public/img/MacetaCruzada2.jpg","/public/img/MacetaCruzada3.jpg"]
-  // },
-  // {
-  //   stock: 10, nombre: "Ondina", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/Maceta2partes.jpg",
-  //   imagenesSecundarias: ["/public/img/Maceta2partes2.jpg","/public/img/Maceta2partes1.jpg","/public/img/Maceta2partes3.jpg" ]
-  // },
-  // {
-  //   stock: 10, nombre: "Obsidiana", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaLinda.jpg",
-  //   imagenesSecundarias: ["/public/img/MacetaLinda1.jpg","/public/img/MacetaLinda2.jpg" ]
-  // },
-
-  // {
-  //   stock: 10, nombre: "Geo - Tamaño m", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaRombo.jpg",
-  //   imagenesSecundarias: ["/public/img/MacetaRombo1.jpg","/public/img/MacetaRombo3.jpg" ]
-  // },
   {
-    stock: 10, nombre: "Geo - Tamaño l", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaRombo2.jpg",
-    imagenesSecundarias: ["/public/img/MacetaRombo3.jpg"  ]
+    stock: 10, nombre: "Volta - ", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/MyPeque3.jpg",
+    imagenesSecundarias: ["/img/MyPeque33.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "No incluye foco."
+  },
+
+  {
+    stock: 10, nombre: "Volta", precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/myLamp3.jpg",
+    imagenesSecundarias: ["/img/MyLamp1.jpg","/img/mylampB.jpg"], foco: "No incluye foco."
   },
   {
-    stock: 10, nombre: "Zenith", precio: 15000, alto: "12cm", ancho: "8cm", idCat: "macetas", img: "/public/img/MacetaMadera.jpg",
-    imagenesSecundarias: ["/public/img/MacetaMadera3.jpg","/public/img/MacetaMadera1.jpg", "/public/img/MacetaMadera2.jpg" ]
+    stock: 10, nombre: "Umbra - negra", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/lamparaA.jpg",
+    imagenesSecundarias: ["/img/lamparaAA1.jpg","/img/lamparaAA.jpg","/img/lamparaAAA.jpg","/img/,imglamparaAAA.jpg"], foco: "No incluye foco."
+  },
+  {
+    stock: 10, nombre: "Umbra - blanca", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/Lampara3.jpg",
+    imagenesSecundarias: ["/img/Lampara2.jpg", "/img/lamparaAAA.jpg", "/img/Lampara333.jpg"], foco: "No incluye foco."
+  },
+  {
+    stock: 10, nombre: "Umbra - mixta", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/lamparaB.jpg",
+    imagenesSecundarias: [ ], foco: "No incluye foco."
+  },
+
+
+
+
+  {
+    stock: 10, nombre: "Halo negra- tamaño M", precio: 15000, alto: "13cm", ancho: "11.5cm", idCat: "macetas", img: "/img/MacetaVertical4.jpg",
+    imagenesSecundarias: [" /img/MacetaVertical2.jpg", "/img/MacetaVertical5.jpg"],
+    // colores: ["Blanco", "Negro"] 
+  },
+  {
+    stock: 10, nombre: "Halo blanca- tamaño M", precio: 15000, alto: "13cm", ancho: "15cm", idCat: "macetas", img: "/img/MacetaVertical.jpg",
+    imagenesSecundarias: ["/img/MacetaVertical3.jpg", "/img/MacetaVertical7.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Halo negra- Tamaño L", precio: 15000, alto: "13cm", ancho: "15cm", idCat: "macetas", img: "/img/MacetaVertical6.jpg",
+    imagenesSecundarias: ["/img/MacetaVertical1.jpg", "/img/H.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Halo blanca- Tamaño L", precio: 15000, alto: "19", ancho: "17cm", idCat: "macetas", img: "/img/MacetaVertical13.jpg",
+    imagenesSecundarias: ["/img/MacetaVertical113.jpg", "/img/MacetaVertical3.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Halo negra- Tamaño XL", precio: 15000, alto: "19", ancho: "17cm", idCat: "macetas", img: "/img/MacetaVertical6.jpg",
+    imagenesSecundarias: ["/img/MacetaVertical1.jpg", "/img/H.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Halo blanca- Tamaño XL", precio: 18000, alto: "19", ancho: "17cm", idCat: "macetas", img: "/img/MacetaVertical13.jpg",
+    imagenesSecundarias: ["/img/MacetaVertical113.jpg", "/img/MacetaVertical3.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Ébano - Tamaño M", precio: 15000, alto: "12cm", ancho: "13cm", idCat: "macetas", img: "/img/MacetaCruzada.jpg",
+    imagenesSecundarias: ["/img/MacetaCruzada1.jpg","/img/MacetaCruzada2.jpg","/img/MacetaCruzada3.jpg"]
+  },
+  {
+    stock: 10, nombre: "Ondina blanca - Tamaño M", precio: 9000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/Maceta2partes.jpg",
+    imagenesSecundarias: ["/img/Maceta2partes2.jpg","/img/Maceta2partes1.jpg","/img/Maceta2partes3.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Ondina blanca - Tamalo L", precio: 15000, alto: "17cm", ancho: "14cm", idCat: "macetas", img: "/img/Maceta111aplanta.jpg",
+    imagenesSecundarias: ["/img/Maceta11aplanta.jpg" ]
+  },
+
+  {
+    stock: 10, nombre: "Obsidia", precio: 15000, alto: "15cm", ancho: "14.5cm", idCat: "macetas", img: "/img/MacetaLinda.jpg",
+    imagenesSecundarias: ["/img/MacetaLinda1.jpg","/img/MacetaLinda2.jpg" ]
+  },
+
+  {
+    stock: 10, nombre: "Geo - Tamaño M", precio: 15000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/MacetaRombo.jpg",
+    imagenesSecundarias: ["/img/MacetaRombo1.jpg","/img/MacetaRombo3.jpg" ]
+  },
+  {
+    stock: 10, nombre: "Geo - Tamaño L", precio: 15000, alto: "14cm", ancho: "16cm", idCat: "macetas", img: "/img/MacetaRombo2.jpg",
+    imagenesSecundarias: ["/img/MacetaRombo3.jpg"  ]
+  },
+  {
+    stock: 10, nombre: "Zenith", precio: 15000, alto: "23cm", ancho: "13.5cm", idCat: "macetas", img: "/img/MacetaMadera.jpg",
+    imagenesSecundarias: ["/img/MacetaMadera3.jpg","/img/MacetaMadera1.jpg", "/img/MacetaMadera2.jpg" ]
   },
 
 
@@ -105,4 +131,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
- //subirProductos()
+   //subirProductos()

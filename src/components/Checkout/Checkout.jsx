@@ -29,6 +29,7 @@ const Checkout = () => {
                 id: producto.item.id,
                 nombre: producto.item.nombre,
                 cantidad: producto.cantidad,
+                color: producto.color,
             })),
             atotal: total,
             fecha: new Date(),
