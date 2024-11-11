@@ -25,25 +25,27 @@ export const db = getFirestore(app)
 
 const misProductos = [
   {
-    stock: 10, nombre: "Tao - M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
-    imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes"
+    stock: 10, nombre: "Tao" , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
+    imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
+    sustentable: "Material 100% sustentable de origen vegetal"
   },
 
   {
     stock: 10, nombre: "Tao - L", precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/Mylampp.jpg",
-    imagenesSecundarias: ["/img/MyLamp1.jpg","/img/MyLampFocooo.jpg","/img/MyLampFocoAmarilla.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes"
+    imagenesSecundarias: ["/img/MyLamp1.jpg","/img/MyLampFocooo.jpg","/img/MyLampFocoAmarilla.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
+    sustentable: "Material 100% sustentable de origen vegetal"
   },
   {
     stock: 10, nombre: "Umbra - negra", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/lamparaA.jpg",
-    imagenesSecundarias: ["/img/lamparaAA1.jpg","/img/lamparaAA.jpg","/img/lamparaAAA.jpg","/img/,imglamparaAAA.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes"
+    imagenesSecundarias: ["/img/lamparaAA1.jpg","/img/lamparaAA.jpg","/img/lamparaAAA.jpg","/img/,imglamparaAAA.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes", sustentable: "Material 100% sustentable de origen vegetal"
   },
   {
     stock: 10, nombre: "Umbra - blanca", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/Lampara3.jpg",
-    imagenesSecundarias: ["/img/Lampara2.jpg", "/img/lamparaAAA.jpg", "/img/Lampara333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes"
+    imagenesSecundarias: ["/img/Lampara2.jpg", "/img/lamparaAAA.jpg", "/img/Lampara333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes", sustentable: "Material 100% sustentable de origen vegetal"
   },
   {
     stock: 10, nombre: "Umbra - mixta", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/lamparaB.jpg",
-    imagenesSecundarias: [ ], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes"
+    imagenesSecundarias: [ ], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes", sustentable: "Material 100% sustentable de origen vegetal"
   },
 
 
@@ -138,4 +140,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
-   //subirProductos()
+    //subirProductos()

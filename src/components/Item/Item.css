@@ -1,11 +1,13 @@
 .modal-overlay {
-    background: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+    background: rgba(202, 227, 233, 0.205); /* Fondo translúcido */
     z-index: 1000;
     border-radius: 8px;
+    /* filter: blur(0.5px) ; */
 }
 
 .modal-content-translucent {
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+    background: rgba(255, 255, 255, 0.288); /* Fondo blanco translúcido */
+     
     padding: 20px;
     border-radius: 8px;
     text-align: center;
