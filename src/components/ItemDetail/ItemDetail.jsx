@@ -5,14 +5,14 @@ import { CarritoContext } from '../../context/CarritoContext';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
 
-const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecundarias = [], colores = [], foco, incandescente, sol, sustentable }) => {
+const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecundarias = [], colores = [], foco, incandescente, sol, sustentable, tamanio }) => {
   const [agregarCantidad, setAgregarCantidad] = useState(0);
   const [colorSeleccionado, setColorSeleccionado] = useState(colores[0] || "blanco"); // Color por defecto
   const { agregarAlCarrito } = useContext(CarritoContext);
 
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
-    const item = { id, nombre, precio, img, ancho, alto, color: colorSeleccionado, foco, incandescente, sol, sustentable };
+    const item = { id, nombre, precio, img, ancho, alto, color: colorSeleccionado, foco, incandescente, sol, sustentable, tamanio };
     agregarAlCarrito(item, cantidad);
     toast.success("Producto agregado al carrito", { autoClose: 2000, theme: "dark", position: "top-right" });
   };
@@ -45,7 +45,8 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
 
       {/* Detalles del producto */}
       <div className="col-12 col-lg-5 text-center">
-        <h2 className="fw-bold">{nombre}</h2><h3>Tamaño: {tamanio}</h3>
+        <h2 className="fw-bold">{nombre} </h2>
+        <h3>Tamaño: {tamanio}</h3>
         <h4 className="text-muted mb-3">Precio: ${precio}</h4>
         <div className="d-flex justify-content-center text-secondary mb-3 ">
           <p className='mx-3'>Ancho: {ancho} cm</p>

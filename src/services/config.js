@@ -25,13 +25,13 @@ export const db = getFirestore(app)
 
 const misProductos = [
   {
-    stock: 10, nombre: "Tao" , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
+    stock: 10, nombre: "Tao " , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
     imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
     sustentable: "Material 100% sustentable de origen vegetal"
   },
 
   {
-    stock: 10, nombre: "Tao - L", precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/Mylampp.jpg",
+    stock: 10, nombre: "Tao ", tamanio: "L",precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/Mylampp.jpg",
     imagenesSecundarias: ["/img/MyLamp1.jpg","/img/MyLampFocooo.jpg","/img/MyLampFocoAmarilla.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
     sustentable: "Material 100% sustentable de origen vegetal"
   },
@@ -52,36 +52,36 @@ const misProductos = [
 
 //-----------------HALO
   {
-    stock: 10, nombre: "Halo - tamaño M", precio: 15000, alto: "13cm", ancho: "11.5cm", idCat: "macetas", img: "/img/MacetaVertical4.jpg",
+    stock: 10, nombre: "Halo ", tamanio: "M",precio: 15000, alto: "13cm", ancho: "11.5cm", idCat: "macetas", img: "/img/MacetaVertical4.jpg",
     imagenesSecundarias: [" /img/MacetaVertical2.jpg", "/img/MacetaVertical5.jpg", "/img/Haloblanca.jpg", "/img/HaloblancaPlanta.jpg", "/img/MacetaVertical5.jpg"],
      colores: ["Blanco", "Negro"], sol: "No exponer al sol directo"
   },
   {
-    stock: 10, nombre: "Halo - Tamaño L", precio: 15000, alto: "13cm", ancho: "15cm", idCat: "macetas", img: "/img/MacetaVertical6.jpg",
+    stock: 10, nombre: "Halo ", tamanio: "L",precio: 15000, alto: "13cm", ancho: "15cm", idCat: "macetas", img: "/img/MacetaVertical6.jpg",
     imagenesSecundarias: ["/img/MacetaVertical1.jpg", "/img/H.jpg","/img/MacetaVertical13.jpg", "/img/HaloConjunto.jpg", "/img/HaloLPlanta.jpg"  ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
   {
-    stock: 10, nombre: "Halo - Tamaño XL", precio: 18000, alto: "19", ancho: "17cm", idCat: "macetas", img: "/img/Haloblanca.jpg",
+    stock: 10, nombre: "Halo ", tamanio: "XL",precio: 18000, alto: "19", ancho: "17cm", idCat: "macetas", img: "/img/Haloblanca.jpg",
     imagenesSecundarias: ["/img/HaloXLPlanta.jpg", "/img/HaloConjunto.jpg" ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
 
 //-----------------Nao
   {
-    stock: 10, nombre: "Nao - Tamaño M", precio: 15000, alto: "12cm", ancho: "13cm", idCat: "macetas", img: "/img/MacetaCruzada.jpg",
+    stock: 10, nombre: "Nao ", tamanio: "M",precio: 15000, alto: "12cm", ancho: "13cm", idCat: "macetas", img: "/img/MacetaCruzada.jpg",
     imagenesSecundarias: ["/img/MacetaCruzada1.jpg","/img/MacetaCruzada2.jpg","/img/MacetaCruzada3.jpg"],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
 
   //-----------------Ena
   {
-    stock: 10, nombre: "Ena - Tamaño M", precio: 9000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/OndinaBlanca.jpg",
+    stock: 10, nombre: "Ena ", tamanio: "M",precio: 9000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/OndinaBlanca.jpg",
     imagenesSecundarias: ["/img/Maceta2partes1.jpg","/img/Maceta2partes3.jpg"  ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
   {
-    stock: 10, nombre: "Ena - Tamalo L", precio: 15000, alto: "17cm", ancho: "14cm", idCat: "macetas", img: "/img/OndinaBlanca.jpg",
+    stock: 10, nombre: "Ena ", tamanio: "L",precio: 15000, alto: "17cm", ancho: "14cm", idCat: "macetas", img: "/img/OndinaBlanca.jpg",
     imagenesSecundarias: [ "/img/ondinaLPlanta.jpg" ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
@@ -97,12 +97,12 @@ const misProductos = [
 
    //-----------------GEO
   {
-    stock: 10, nombre: "Geo - Tamaño M", precio: 15000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/MacetaRombo.jpg",
+    stock: 10, nombre: "Geo ", tamanio: "M",precio: 15000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/MacetaRombo.jpg",
     imagenesSecundarias: ["/img/MacetaRombo1.jpg","/img/GeoLPlanta.jpg" ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
   {
-    stock: 10, nombre: "Geo - Tamaño L", precio: 15000, alto: "14cm", ancho: "16cm", idCat: "macetas", img: "/img/GeoMaceta.jpg",
+    stock: 10, nombre: "Geo ", tamanio: "L",precio: 15000, alto: "14cm", ancho: "16cm", idCat: "macetas", img: "/img/GeoMaceta.jpg",
     imagenesSecundarias: ["/img/GeoLPlantaa.jpg"  ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
@@ -140,4 +140,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
-    //subirProductos()
+     //subirProductos()

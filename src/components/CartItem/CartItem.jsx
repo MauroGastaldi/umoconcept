@@ -22,7 +22,7 @@ const CartItem = ({ item, cantidad }) => {
         <h5 className="mb-2">{item.nombre}</h5>
         <div className="d-flex justify-content-center justify-content-md-between flex-column flex-md-row">
           
-        <p className="mb-1"><strong>Cantidad:</strong> {item.color}</p>
+        <p className="mb-1"><strong>Color:</strong> {item.color}</p>
           <p className="mb-1"><strong>Cantidad:</strong> {cantidad}</p>
           <p className="mb-1"><strong>Precio:</strong> ${item.precio}</p>
         </div>
