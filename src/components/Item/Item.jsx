@@ -136,7 +136,7 @@ const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
                 
             >
                 <p></p>
-                <i class="bi bi-whatsapp"></i>
+                <i className="bi bi-whatsapp"></i>
             </a>
         </div>
     );

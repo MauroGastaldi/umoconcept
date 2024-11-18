@@ -53,41 +53,49 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
           <p className='mx-3'>Alto: {alto} cm</p>
         </div>
 
-        {/* Selector de color */}
-        <div className="mb-4">
-          <label htmlFor="colorSelect" className="form-label">Color:</label>
-          <select
-            id="colorSelect"
-            className="form-select"
-            value={colorSeleccionado}
-            onChange={(e) => setColorSeleccionado(e.target.value)}
-          >
-            {colores.map((color, index) => (
-              <option key={index} value={color}>{color}</option>
-            ))}
-          </select>
-        </div>
+        {/* Selector de color, solo para productos que tienen colores */}
+        {colores.length > 0 && (
+          <div className="d-flex   mb-4  ">
+            <label htmlFor="colorSelect " className="form-label">Seleccionar color:</label>
+            <select
+              id="colorSelect"
+              className="form-select "
+              value={colorSeleccionado}
+              onChange={(e) => setColorSeleccionado(e.target.value)}
+            >
+              {colores.map((color, index) => (
+                <option key={index} value={color}>{color}</option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {/* Contador y carrito */}
         <Contador inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />
-        <Link className="btn btn-outline-dark mt-4 rounded-pill" to="/">Volver a la tienda</Link>
-        <p><i class="bi bi-recycle"></i> Material 100% sustentable de origen vegetal</p>
+        <Link className="btn btn-outline-dark my-3 rounded-pill" to="/">Volver a la tienda</Link>
+        <p className=' '><i className="bi bi-recycle "></i> Material 100% sustentable de origen vegetal</p>
 
-
-        {/* Detalles adicionales */}
-        {/* <table className="table table-borderless mt-4">
+        {/* Detalles adicionales condicionales */}
+        <table className="table table-borderless mt-4">
           <tbody>
-            <tr>
-              <td className="text-center"><i className="bi bi-brightness-high"></i> {sol}</td>
-            </tr>
-            <tr>
-              <td className="text-center"><i className="bi bi-lightbulb"></i> {foco}</td>
-            </tr>
-            <tr>
-              <td className="text-center" colSpan="2"><i className="bi bi-plug"></i> {incandescente}</td>
-            </tr>
+            {sol && (
+              <tr>
+                <td className="text-center"><i className="bi bi-brightness-high"></i> {sol}</td>
+              </tr>
+            )}
+            {foco && (
+              <tr>
+                <td className="text-center"><i className="bi bi-lightbulb"></i> {foco}</td>
+              </tr>
+            )}
+            {incandescente && (
+              <tr>
+                <td className="text-center" colSpan="2"><i className="bi bi-plug"></i> {incandescente}</td>
+              </tr>
+            )}
           </tbody>
-        </table> */}
+        </table>
+
         <p className="text-muted mt-4">
           Nuestros productos impresos en 3D están fabricados con PLA, un material biodegradable de origen vegetal que combina diseño moderno con un compromiso hacia el medioambiente.
         </p>

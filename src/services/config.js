@@ -25,7 +25,7 @@ export const db = getFirestore(app)
 
 const misProductos = [
   {
-    stock: 10, nombre: "Tao " , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
+    stock: 10, nombre: "Tao " , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequeNegra.jpg",
     imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
     sustentable: "Material 100% sustentable de origen vegetal"
   },
@@ -140,4 +140,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
-     //subirProductos()
+      //subirProductos()

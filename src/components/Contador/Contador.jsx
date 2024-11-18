@@ -6,12 +6,12 @@ const Contador = ({ inicial, stock, funcionAgregar }) => {
 
   return (
     <>
-      <div>
+      <div className='mb-2'>
         <button className='btn btn-dark rounded-pill m-2' onClick={restarContador}> - </button>
         <strong>{contador}</strong>
         <button className='btn btn-dark rounded-pill m-2' onClick={sumarContador}> + </button>
       </div>
-      <button className='btn btn-dark rounded-pill' onClick={() => funcionAgregar(contador)} disabled={!stock}>
+      <button className='btn btn-dark rounded-pill mx-4 ' onClick={() => funcionAgregar(contador)} disabled={!stock}>
         Agregar al carrito
       </button>
     </>
