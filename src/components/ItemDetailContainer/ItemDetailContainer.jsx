@@ -6,13 +6,14 @@ import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState(null)
+  const [producto, setProducto] = useState(null)
 
-    const {idItem} = useParams()
+  const { idItem } = useParams()
 
-    useEffect(()=>{
-      console.log("idItem recibido:", idItem);
-      const nuevoDoc = doc(db, "productos", idItem);
+  useEffect(() => {
+    console.log("idItem recibido:", idItem);
+    const nuevoDoc = doc(db, "productos", idItem);
+
   getDoc(nuevoDoc)
     .then((res) => {
       if (res.exists()) {
@@ -20,16 +21,18 @@ const ItemDetailContainer = () => {
         const nuevosProducto = { id: res.id, ...data };
         setProducto(nuevosProducto);
       } else {
-        console.error("Producto no encontrado");
+        console.error(`El producto con ID ${idItem} no existe en la base de datos.`);
       }
     })
-    .catch((error) => console.error("Error al obtener el producto:", error));
+    .catch((error) => {
+      console.error("Error al obtener el documento:", error);
+    });
 }, [idItem]);
   return (
     <div>
-        <ItemDetail {...producto}/>
+      {producto ? <ItemDetail {...producto} /> : <p>Cargando detalles del producto...</p>}
     </div>
-  )
+  );
 }
 
 export default ItemDetailContainer
