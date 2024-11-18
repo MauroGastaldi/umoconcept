@@ -12,16 +12,19 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
       console.log("idItem recibido:", idItem);
-      const nuevoDoc = doc(db, "productos", idItem)
-  
-      getDoc(nuevoDoc)
-        .then(res => {
-          const data = res.data();
-          const nuevosProducto = {id: res.id,...data}
-          setProducto(nuevosProducto)
-        })
-    }, [idItem])
-
+      const nuevoDoc = doc(db, "productos", idItem);
+  getDoc(nuevoDoc)
+    .then((res) => {
+      if (res.exists()) {
+        const data = res.data();
+        const nuevosProducto = { id: res.id, ...data };
+        setProducto(nuevosProducto);
+      } else {
+        console.error("Producto no encontrado");
+      }
+    })
+    .catch((error) => console.error("Error al obtener el producto:", error));
+}, [idItem]);
   return (
     <div>
         <ItemDetail {...producto}/>
