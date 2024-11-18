@@ -6,33 +6,26 @@ import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
-  const [producto, setProducto] = useState(null)
+    const [producto, setProducto] = useState(null)
 
-  const { idItem } = useParams()
+    const {idItem} = useParams()
 
-  useEffect(() => {
-    console.log("idItem recibido:", idItem);
-    const nuevoDoc = doc(db, "productos", idItem);
+    useEffect(()=>{
+      const nuevoDoc = doc(db, "productos", idItem)
+  
+      getDoc(nuevoDoc)
+        .then(res => {
+          const data = res.data();
+          const nuevosProducto = {id: res.id,...data}
+          setProducto(nuevosProducto)
+        })
+    }, [idItem])
 
-  getDoc(nuevoDoc)
-    .then((res) => {
-      if (res.exists()) {
-        const data = res.data();
-        const nuevosProducto = { id: res.id, ...data };
-        setProducto(nuevosProducto);
-      } else {
-        console.error(`El producto con ID ${idItem} no existe en la base de datos.`);
-      }
-    })
-    .catch((error) => {
-      console.error("Error al obtener el documento:", error);
-    });
-}, [idItem]);
   return (
     <div>
-      {producto ? <ItemDetail {...producto} /> : <p>Cargando detalles del producto...</p>}
+        <ItemDetail {...producto}/>
     </div>
-  );
+  )
 }
 
 export default ItemDetailContainer
