@@ -114,7 +114,7 @@ const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
 
             {/* Botón de WhatsApp fijo */}
             
-            {/* <a
+            <a
                 href="https://wa.me/3435024502"
                 className="btn-whatsapp position-fixed"
                 style={{
@@ -137,7 +137,7 @@ const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
             >
                 <p></p>
                 <i className="bi bi-whatsapp"></i>
-            </a> */}
+            </a>
         </div>
     );
 };

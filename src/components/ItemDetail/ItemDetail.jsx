@@ -10,6 +10,8 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
   const [colorSeleccionado, setColorSeleccionado] = useState(colores[0] || "blanco"); // Color por defecto
   const { agregarAlCarrito } = useContext(CarritoContext);
 
+  console.log(id); 
+  
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
     const item = { id, nombre, precio, img, ancho, alto, color: colorSeleccionado, foco, incandescente, sol, sustentable, tamanio };
