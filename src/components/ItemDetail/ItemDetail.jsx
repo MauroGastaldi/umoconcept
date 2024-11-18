@@ -5,47 +5,16 @@ import { CarritoContext } from '../../context/CarritoContext';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
 
-const ItemDetail = ({
-  id = "sin-id",
-  nombre = "Producto sin nombre",
-  precio = 0,
-  ancho = 0,
-  alto = 0,
-  img = "",
-  stock = 0,
-  imagenesSecundarias = [],
-  colores = [],
-  foco = false,
-  incandescente = false,
-  sol = false,
-  sustentable = false,
-  tamanio = "No especificado"
-}) => {
+const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecundarias = [], colores = [], foco, incandescente, sol, sustentable, tamanio }) => {
   const [agregarCantidad, setAgregarCantidad] = useState(0);
   const [colorSeleccionado, setColorSeleccionado] = useState(colores[0] || "blanco"); // Color por defecto
   const { agregarAlCarrito } = useContext(CarritoContext);
 
-  if (!id || id === "sin-id") {
-    console.error("Error: El ID del producto es inválido o está ausente.");
-    return <p>Cargando producto...</p>;
-  }
-
+  console.log(id); 
+  
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
-    const item = {
-      id,
-      nombre,
-      precio,
-      img,
-      ancho,
-      alto,
-      color: colorSeleccionado,
-      foco,
-      incandescente,
-      sol,
-      sustentable,
-      tamanio
-    };
+    const item = { id, nombre, precio, img, ancho, alto, color: colorSeleccionado, foco, incandescente, sol, sustentable, tamanio };
     agregarAlCarrito(item, cantidad);
     toast.success("Producto agregado al carrito", { autoClose: 2000, theme: "dark", position: "top-right" });
   };
@@ -78,21 +47,21 @@ const ItemDetail = ({
 
       {/* Detalles del producto */}
       <div className="col-12 col-lg-5 text-center">
-        <h2 className="fw-bold">{nombre}</h2>
+        <h2 className="fw-bold">{nombre} </h2>
         <h3>Tamaño: {tamanio}</h3>
         <h4 className="text-muted mb-3">Precio: ${precio}</h4>
-        <div className="d-flex justify-content-center text-secondary mb-3">
-          <p className="mx-3">Ancho: {ancho} cm</p>
-          <p className="mx-3">Alto: {alto} cm</p>
+        <div className="d-flex justify-content-center text-secondary mb-3 ">
+          <p className='mx-3'>Ancho: {ancho} cm</p>
+          <p className='mx-3'>Alto: {alto} cm</p>
         </div>
 
-        {/* Selector de color */}
+        {/* Selector de color, solo para productos que tienen colores */}
         {colores.length > 0 && (
-          <div className="d-flex mb-4">
-            <label htmlFor="colorSelect" className="form-label">Seleccionar color:</label>
+          <div className="d-flex   mb-4  ">
+            <label htmlFor="colorSelect " className="form-label">Seleccionar color:</label>
             <select
               id="colorSelect"
-              className="form-select"
+              className="form-select "
               value={colorSeleccionado}
               onChange={(e) => setColorSeleccionado(e.target.value)}
             >
@@ -106,9 +75,9 @@ const ItemDetail = ({
         {/* Contador y carrito */}
         <Contador inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />
         <Link className="btn btn-outline-dark my-3 rounded-pill" to="/">Volver a la tienda</Link>
-        <p><i className="bi bi-recycle"></i> Material 100% sustentable de origen vegetal</p>
+        <p className=' '><i className="bi bi-recycle "></i> Material 100% sustentable de origen vegetal</p>
 
-        {/* Detalles adicionales */}
+        {/* Detalles adicionales condicionales */}
         <table className="table table-borderless mt-4">
           <tbody>
             {sol && (
