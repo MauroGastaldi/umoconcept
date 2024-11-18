@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
     const {idItem} = useParams()
 
     useEffect(()=>{
+      console.log("idItem recibido:", idItem);
       const nuevoDoc = doc(db, "productos", idItem)
   
       getDoc(nuevoDoc)

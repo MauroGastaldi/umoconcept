@@ -22,7 +22,7 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
   return (
     <div className="contenedor-item row m-3 justify-content-center">
       {/* Carrusel de imágenes */}
-      <div className="col-12 col-lg-6 mb-4">
+      {/* <div className="col-12 col-lg-6 mb-4">
         <div id={`carousel-${id}`} className="carousel slide" data-bs-ride="false">
           <div className="carousel-inner">
             <div className="carousel-item active">
@@ -43,7 +43,7 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
             <span className="visually-hidden">Siguiente</span>
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Detalles del producto */}
       <div className="col-12 col-lg-5 text-center">
