@@ -26,7 +26,7 @@ export const db = getFirestore(app)
 
 const misProductos = [
   {
-    stock: 10, nombre: "Tao " , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
+     stock: 10, nombre: "Tao " , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
     imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
     sustentable: "Material 100% sustentable de origen vegetal"
   },
@@ -110,10 +110,10 @@ const misProductos = [
 
 
   //-----------------Zenith
-  // {
-  //   stock: 10, nombre: "Zenith", precio: 15000, alto: "23cm", ancho: "13.5cm", idCat: "macetas", img: "/img/MacetaMadera.jpg",
-  //   imagenesSecundarias: ["/img/MacetaMadera3.jpg","/img/MacetaMadera1.jpg", "/img/MacetaMadera2.jpg" ], sol: "No exponer al sol directo"
-  // },
+  {
+    stock: 10, nombre: "Zenith", precio: 15000, alto: "23cm", ancho: "13.5cm", idCat: "macetas", img: "/img/MacetaMadera.jpg",
+    imagenesSecundarias: ["/img/MacetaMadera3.jpg","/img/MacetaMadera1.jpg", "/img/MacetaMadera2.jpg" ], sol: "No exponer al sol directo"
+  },
 
 
    
@@ -123,19 +123,20 @@ const misProductos = [
 import { collection, doc, writeBatch } from "firebase/firestore";
 
 const subirProductos = async () => {
-  const batch = writeBatch(db)
-  const productosRef = collection(db, "productos")
+  const batch = writeBatch(db);
+  const productosRef = collection(db, "productos");
 
   misProductos.forEach((producto) => {
-    const nuevoDoc = doc(productosRef) //crea nuevo documento con ID automatico
-    batch.set(nuevoDoc, producto) //agrega la operacion de escritura al batch
-  })
+    const nuevoDoc = doc(productosRef); // Crea un documento con ID automático
+    const idGenerado = nuevoDoc.id; // Obtén el ID generado
+    batch.set(nuevoDoc, { ...producto, id: idGenerado }); // Guarda el ID dentro del documento
+  });
+
   try {
     await batch.commit();
-    console.log("producto subido correctamente");
+    console.log("Productos subidos correctamente");
   } catch (error) {
-    console.log("error al subir el producto", error);
-
+    console.log("Error al subir los productos", error);
   }
 }
 
