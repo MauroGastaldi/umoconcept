@@ -78,7 +78,7 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
         <p className=' '><i className="bi bi-recycle "></i> Material 100% sustentable de origen vegetal</p>
 
         {/* Detalles adicionales condicionales */}
-        {/* <table className="table table-borderless mt-4">
+        <table className="table table-borderless mt-4">
           <tbody>
             {sol && (
               <tr>
@@ -96,7 +96,7 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
               </tr>
             )}
           </tbody>
-        </table> */}
+        </table>
 
         <p className="text-muted mt-4">
           Nuestros productos impresos en 3D están fabricados con PLA, un material biodegradable de origen vegetal que combina diseño moderno con un compromiso hacia el medioambiente.
