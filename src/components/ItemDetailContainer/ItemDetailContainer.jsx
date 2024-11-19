@@ -10,16 +10,19 @@ const ItemDetailContainer = () => {
 
     const {idItem} = useParams()
 
-    useEffect(()=>{
-      const nuevoDoc = doc(db, "productos", idItem)
-  
+    useEffect(() => {
+      console.log("ID recibido desde la URL:", idItem);
+      const nuevoDoc = doc(db, "productos", idItem);
+    
       getDoc(nuevoDoc)
         .then(res => {
           const data = res.data();
-          const nuevosProducto = {id: res.id,...data}
-          setProducto(nuevosProducto)
+          const nuevosProducto = { id: res.id, ...data };
+          setProducto(nuevosProducto);
         })
-    }, [idItem])
+        .catch(error => console.error("Error al obtener el documento:", error));
+    }, [idItem]);
+    
 
   return (
     <div>
