@@ -123,21 +123,22 @@ const misProductos = [
 import { collection, doc, writeBatch } from "firebase/firestore";
 
 const subirProductos = async () => {
-  const batch = writeBatch(db)
-  const productosRef = collection(db, "productos")
+  const batch = writeBatch(db);
+  const productosRef = collection(db, "productos");
 
   misProductos.forEach((producto) => {
-    const nuevoDoc = doc(productosRef) //crea nuevo documento con ID automatico
-    batch.set(nuevoDoc, producto) //agrega la operacion de escritura al batch
-  })
+    const nuevoDoc = doc(productosRef); // Crea un documento con ID automático
+    const idGenerado = nuevoDoc.id; // Obtén el ID generado
+    batch.set(nuevoDoc, { ...producto, id: idGenerado }); // Guarda el ID dentro del documento
+  });
+
   try {
     await batch.commit();
-    console.log("producto subido correctamente");
+    console.log("Productos subidos correctamente");
   } catch (error) {
-    console.log("error al subir el producto", error);
-
+    console.log("Error al subir los productos", error);
   }
-}
+};
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
