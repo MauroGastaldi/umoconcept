@@ -56,7 +56,7 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
         </div>
 
         {/* Selector de color, solo para productos que tienen colores */}
-        {colores.length > 0 && (
+        {/* {colores.length > 0 && (
           <div className="d-flex   mb-4  ">
             <label htmlFor="colorSelect " className="form-label">Seleccionar color:</label>
             <select
@@ -70,7 +70,7 @@ const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecun
               ))}
             </select>
           </div>
-        )}
+        )} */}
 
         {/* Contador y carrito */}
         <Contador inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />
