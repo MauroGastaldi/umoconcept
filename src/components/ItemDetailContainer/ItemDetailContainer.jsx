@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
   const [producto, setProducto] = useState(null)
 
-  const { idItem } = useParams()
+  const { id  } = useParams()
 
 
 
