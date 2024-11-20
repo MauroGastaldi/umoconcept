@@ -5,32 +5,42 @@ import { db } from '../../services/config'
 import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [producto, setProducto] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const [producto, setProducto] = useState(null)
-
-  const { id  } = useParams()
 
 
 
   useEffect(() => {
-    if (id) {
-        console.log("Buscando producto por ID:", id);
-        const productoRef = doc(db, "productos", id);
-        getDoc(productoRef)
-            .then(res => {
-                if (res.exists()) {
-                    console.log("Producto encontrado:", res.data());
-                    setProducto({ id: res.id, ...res.data() });
-                } else {
-                    console.error("Producto no encontrado.");
-                }
-            })
-            .catch(error => console.error("Error al obtener el producto:", error));
-    }
-}, [id]);
+    console.log("ID recibido:", id); // Verifica que el ID se recibe correctamente
+
+    const fetchProducto = async () => {
+      try {
+        const productoDoc = await getDoc(doc(db, "productos", id));
+        if (productoDoc.exists()) {
+          setProducto({ id: productoDoc.id, ...productoDoc.data() });
+        } else {
+          console.error("No se encontró el producto con el ID:", id);
+        }
+      } catch (error) {
+        console.error("Error obteniendo el producto:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducto();
+  }, [id]);
+
+  if (loading) return <Loader />;
+
+  if (!producto) return <h2>Producto no encontrado</h2>;
 
   return (
     <div>
+        <h1>{producto.nombre}</h1>
+        <p>{producto.descripcion}</p>
       <ItemDetail {...producto} />
     </div>
   )
