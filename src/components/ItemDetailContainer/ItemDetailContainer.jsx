@@ -13,29 +13,21 @@ const ItemDetailContainer = () => {
 
 
   useEffect(() => {
-
-    const nuevoDoc = doc(db, "productos", idItem)
-
-    getDoc(nuevoDoc)
-      .then(res => {
-        const data = res.data();
-
-
-        //agregue esto tambien
-        console.log("Validando ID:", idItem);
-
-        //agregue este IF
-        if (!data) {
-          console.error("El producto no existe en la base de datos.");
-          setProducto(null);
-          return;
-        }
-
-        const nuevosProducto = { id: res.id, ...data }
-        setProducto(nuevosProducto)
-      })
-      .catch(error => console.error("Error al obtener el producto:", error));
-  }, [idItem])
+    if (id) {
+        console.log("Buscando producto por ID:", id);
+        const productoRef = doc(db, "productos", id);
+        getDoc(productoRef)
+            .then(res => {
+                if (res.exists()) {
+                    console.log("Producto encontrado:", res.data());
+                    setProducto({ id: res.id, ...res.data() });
+                } else {
+                    console.error("Producto no encontrado.");
+                }
+            })
+            .catch(error => console.error("Error al obtener el producto:", error));
+    }
+}, [id]);
 
   return (
     <div>

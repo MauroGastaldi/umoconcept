@@ -19,7 +19,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/categoria/:idCategoria" element={<ItemListContainer />} />
-            <Route path="/item/:idItem" element={<ItemDetailContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
             <Route path="*" element={ <h2 className='d-flex justify-content-center'> Sitio en construccion</h2> }/>
