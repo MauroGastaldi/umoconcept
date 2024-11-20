@@ -110,10 +110,10 @@ const misProductos = [
 
 
   //-----------------Zenith
-  // {
-  //   stock: 10, nombre: "Zenith", precio: 15000, alto: "23cm", ancho: "13.5cm", idCat: "macetas", img: "/img/MacetaMadera.jpg",
-  //   imagenesSecundarias: ["/img/MacetaMadera3.jpg","/img/MacetaMadera1.jpg", "/img/MacetaMadera2.jpg" ], sol: "No exponer al sol directo"
-  // },
+  {
+    stock:  0, nombre: "Zenith", precio: 15000, alto: "23cm", ancho: "13.5cm", idCat: "macetas", img: "/img/MacetaMadera.jpg",
+    imagenesSecundarias: ["/img/MacetaMadera3.jpg","/img/MacetaMadera1.jpg", "/img/MacetaMadera2.jpg" ], sol: "No exponer al sol directo"
+  },
 
 
    
@@ -142,4 +142,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
-     //subirProductos()
+      //subirProductos()

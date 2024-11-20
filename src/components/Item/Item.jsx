@@ -27,6 +27,16 @@ const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
         }
     };
 
+    
+    //Agrego este IF
+    if (!id) {
+        console.error("El ID del producto es inválido.");
+        return null;
+    }
+
+
+
+
     return (
         <div className="cardProducto my-4 d-flex justify-content-center position-relative">
             <div
