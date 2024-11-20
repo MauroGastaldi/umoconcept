@@ -7,12 +7,14 @@ import { useContext } from 'react';
 import { toast } from 'react-toastify';
 
 const ItemDetail = ({ id, nombre, precio, ancho, alto, img, stock, imagenesSecundarias = [], colores = [], foco, incandescente, sol, sustentable, tamanio }) => {
- const [agregarCantidad, setAgregarCantidad] = useState(0);
+  const [agregarCantidad, setAgregarCantidad] = useState(0);
   const [colorSeleccionado, setColorSeleccionado] = useState(colores[0] || "blanco"); // Color por defecto
   const { agregarAlCarrito } = useContext(CarritoContext);
 
-  console.log(id); 
-  
+  console.log("Estoy aca");
+
+  console.log(id);
+
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
     const item = { id, nombre, precio, img, ancho, alto, color: colorSeleccionado, foco, incandescente, sol, sustentable, tamanio };
