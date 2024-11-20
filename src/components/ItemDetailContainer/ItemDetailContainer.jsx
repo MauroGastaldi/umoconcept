@@ -40,8 +40,8 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-        <h1>{producto.nombre}</h1>
-        <p>{producto.descripcion}</p>
+        {/* <h1>{producto.nombre}</h1>
+        <p>{producto.descripcion}</p> */}
       <ItemDetail {...producto} />
     </div>
   )
