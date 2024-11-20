@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import { CarritoContext } from '../../context/CarritoContext';
 import "../Item/Item.css";
 
-const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
+const Item = ({  nombre, precio, img, stock, colores = [], tamanio }) => {
     const { agregarAlCarrito } = useContext(CarritoContext);
     const [showModal, setShowModal] = useState(false);
     const [colorSeleccionado, setColorSeleccionado] = useState('');
@@ -12,13 +12,13 @@ const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
         if (colores.length > 1) { // Mostrar modal solo si hay más de un color disponible
             setShowModal(true);
         } else {
-            agregarAlCarrito({ id, nombre, precio, img, color: colores[0] || null }, 1);
+            agregarAlCarrito({   nombre, precio, img, color: colores[0] || null }, 1);
         }
     };
 
     const confirmarColorYAgregarAlCarrito = () => {
         if (colorSeleccionado) {
-            const item = { id, nombre, precio, img, color: colorSeleccionado };
+            const item = {  nombre, precio, img, color: colorSeleccionado };
             agregarAlCarrito(item, 1);
             setShowModal(false);
             setColorSeleccionado('');
@@ -27,7 +27,7 @@ const Item = ({ id, nombre, precio, img, stock, colores = [], tamanio }) => {
         }
     };
 
-    
+
     //Agrego este IF
     if (!id) {
         console.error("El ID del producto es inválido.");
