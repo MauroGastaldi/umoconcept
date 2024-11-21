@@ -26,13 +26,13 @@ export const db = getFirestore(app)
 
 const misProductos = [
   {
-    stock: 10, nombre: "Tao " , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
+    stock: 10, nombre: "Myp" , tamanio: "M", precio: 21500, alto: "17cm", ancho: "12cm", idCat: "lamparas", img: "/img/mypequee.jpg",
     imagenesSecundarias: ["/img/mypequeeFoco.jpg", "/img/MyPeque333.jpg", "/img/MyPeque3333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
     sustentable: "Material 100% sustentable de origen vegetal"
   },
 
   {
-    stock: 10, nombre: "Tao ", tamanio: "L",precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/Mylampp.jpg",
+    stock: 10, nombre: "Myl", tamanio: "L",precio: 25500, alto: "18cm", ancho: "13.5cm", idCat: "lamparas", img: "/img/Mylampp.jpg",
     imagenesSecundarias: ["/img/MyLamp1.jpg","/img/MyLampFocooo.jpg","/img/MyLampFocoAmarilla.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes",
     sustentable: "Material 100% sustentable de origen vegetal"
   },
@@ -41,8 +41,8 @@ const misProductos = [
     imagenesSecundarias: ["/img/lamparaAA1.jpg","/img/lamparaAA.jpg","/img/lamparaAAA.jpg","/img/,imglamparaAAA.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes", sustentable: "Material 100% sustentable de origen vegetal"
   },
   {
-    stock: 10, nombre: "Umbra - blanca", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/Lampara3.jpg",
-    imagenesSecundarias: ["/img/Lampara2.jpg", "/img/lamparaAAA.jpg", "/img/Lampara333.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes", sustentable: "Material 100% sustentable de origen vegetal"
+    stock: 10, nombre: "Umbra - blanca", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/UmbraBlanca.jpg",
+    imagenesSecundarias: ["/img/UmbraBlanca1.jpg", "/img/Lampara333.jpg", "/img/lamparaAAA.jpg"], foco: "Incluye foco 4w luz cálida", incandescente: "No utilizar focos incandescentes", sustentable: "Material 100% sustentable de origen vegetal"
   },
   {
     stock: 10, nombre: "Umbra - mixta", precio: 34500, alto: "26cm", ancho: "16.5cm", idCat: "lamparas", img: "/img/lamparaB.jpg",
@@ -70,19 +70,19 @@ const misProductos = [
 
 //-----------------Nao
   {
-    stock: 10, nombre: "Nao ", tamanio: "M",precio: 15000, alto: "12cm", ancho: "13cm", idCat: "macetas", img: "/img/MacetaCruzada.jpg",
+    stock: 10, nombre: "Mc", tamanio: "M",precio: 15000, alto: "12cm", ancho: "13cm", idCat: "macetas", img: "/img/MacetaCruzada.jpg",
     imagenesSecundarias: ["/img/MacetaCruzada1.jpg","/img/MacetaCruzada2.jpg","/img/MacetaCruzada3.jpg"],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
 
   //-----------------Ena
   {
-    stock: 10, nombre: "Ena ", tamanio: "M",precio: 9000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/OndinaBlanca.jpg",
+    stock: 10, nombre: "Ena ", tamanio: "M",precio: 9000, alto: "13cm", ancho: "12.5cm", idCat: "macetas", img: "/img/Ena.jpg",
     imagenesSecundarias: ["/img/Maceta2partes1.jpg","/img/Maceta2partes3.jpg"  ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
   {
-    stock: 10, nombre: "Ena ", tamanio: "L",precio: 15000, alto: "17cm", ancho: "14cm", idCat: "macetas", img: "/img/OndinaBlanca.jpg",
+    stock: 10, nombre: "Ena ", tamanio: "L",precio: 15000, alto: "17cm", ancho: "14cm", idCat: "macetas", img: "/img/Ena.jpg",
     imagenesSecundarias: [ "/img/ondinaLPlanta.jpg" ],
     colores: ["Blanco", "Negro"] , sol: "No exponer al sol directo"
   },
@@ -115,7 +115,11 @@ const misProductos = [
     imagenesSecundarias: ["/img/MacetaMadera3.jpg","/img/MacetaMadera1.jpg", "/img/MacetaMadera2.jpg" ], sol: "No exponer al sol directo"
   },
 
-
+ //-----------------Pf
+ {
+  stock:  20, nombre: "Pf", precio: 15000, alto: "14cm", ancho: "7.5cm", idCat: "macetas", img: "/img/Frasco1.jpg",
+  imagenesSecundarias: ["/img/Frasco.jpg" ], sol: "No exponer al sol directo"
+},
    
 ]
 
@@ -142,4 +146,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
-      //subirProductos()
+       subirProductos()
