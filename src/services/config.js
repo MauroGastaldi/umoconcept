@@ -146,4 +146,4 @@ const subirProductos = async () => {
 
 //una vez que subo los productos, comento la funcion para que no vuelvan a subirse
 
-       subirProductos()
+       //subirProductos()
